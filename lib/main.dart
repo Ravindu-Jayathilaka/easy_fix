@@ -1,19 +1,9 @@
+import 'package:easy_fix/pwreset.dart';
+import 'package:easy_fix/verificationcode.dart';
 import 'package:flutter/material.dart';
+import 'package:easy_fix/log in page.dart';
+import 'package:easy_fix/create account page.dart';
 
-void main() {
-  runApp(LogInPage());
-}
-
-class LogInPage extends StatefulWidget {
-  const LogInPage({Key? key}) : super(key: key);
-
-  @override
-  State<LogInPage> createState() => _LogInPageState();
-}
-
-class _LogInPageState extends State<LogInPage> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp();
-  }
-}
+void main() => runApp(MaterialApp(
+      home: VerificationCode(),
+    ));

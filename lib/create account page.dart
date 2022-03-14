@@ -39,6 +39,11 @@ class _CreateAccountState extends State<CreateAccount> {
                   border: OutlineInputBorder(),
                   hintText: 'Mobile Number',
                 ),
+              ),
+              FlatButton(
+                onPressed: null,
+                child: Text('Submit'),
+                color: Colors.teal,
               )
             ],
           ),
