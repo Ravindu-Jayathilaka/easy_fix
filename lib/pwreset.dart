@@ -10,23 +10,25 @@ class PwReset extends StatefulWidget {
 class _PwResetState extends State<PwReset> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: const [
-            Text('Enter the Email associated with your account'),
-            TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Email',
+    return MaterialApp(
+      home: Scaffold(
+        body: SafeArea(
+          child: Column(
+            children: [
+              Text('Enter the Email associated with your account'),
+              const TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Email',
+                ),
               ),
-            ),
-            RaisedButton(
-              onPressed: (null),
-              child: Text('Submit'),
-              color: Colors.teal,
-            ),
-          ],
+              ElevatedButton(
+                onPressed: () {},
+                child: Text('Submit'),
+                style: const ButtonStyle(),
+              ),
+            ],
+          ),
         ),
       ),
     );

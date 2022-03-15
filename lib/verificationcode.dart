@@ -10,24 +10,32 @@ class VerificationCode extends StatefulWidget {
 class _VerificationCodeState extends State<VerificationCode> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
+    return MaterialApp(
+      home: Scaffold(
+        body: SafeArea(
           child: Column(
-        children: const [
-          Text('Enter the verification code sent you by Email'),
-          TextField(
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: 'Verification Code',
-            ),
+            children: [
+              Text('Enter the verification code sent you by Email'),
+              const TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Verification Code',
+                ),
+              ),
+              ElevatedButton(
+                child: const Text(
+                  'Submit',
+                  style: TextStyle(color: Colors.white),
+                ),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.red,
+                ),
+                onPressed: null,
+              ),
+            ],
           ),
-          RaisedButton(
-            onPressed: (null),
-            child: Text('Submit'),
-            color: Colors.teal,
-          ),
-        ],
-      )),
+        ),
+      ),
     );
   }
 }
