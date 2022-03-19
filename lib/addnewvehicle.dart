@@ -82,7 +82,7 @@ class _AddNewVehicleState extends State<AddNewVehicle> {
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                     ),
-                  )
+                  ),
                 ],
               ),
               Row(
