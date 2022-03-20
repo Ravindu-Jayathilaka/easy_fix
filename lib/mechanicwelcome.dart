@@ -31,13 +31,35 @@ class _MechanicWelcomeState extends State<MechanicWelcome> {
                       ],
                     ),
                     Column(
-                      children: const [
-                        Icon(Icons.mail, size: 20),
+                      children: [
+                        Row(
+                          children: [
+                            Icon(Icons.mail, size: 20),
+                            Icon(
+                              Icons.add_alert,
+                              size: 20,
+                            )
+                          ],
+                        )
                       ],
                     ),
                   ],
                 ),
               ),
+              Container(
+                child: Text('My Workshop'),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: Colors.teal,
+                ),
+              ),
+              Container(
+                child: Text('My Jobs'),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: Colors.teal,
+                ),
+              )
             ],
           ),
         ),
