@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-class OngoingRepairsMechanic extends StatefulWidget {
-  const OngoingRepairsMechanic({Key? key}) : super(key: key);
+class AddJob extends StatefulWidget {
+  const AddJob({Key? key}) : super(key: key);
 
   @override
-  State<OngoingRepairsMechanic> createState() => _OngoingRepairsMechanicState();
+  State<AddJob> createState() => _AddJobState();
 }
 
-class _OngoingRepairsMechanicState extends State<OngoingRepairsMechanic> {
+class _AddJobState extends State<AddJob> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Center(child: const Text('Ongoing Repairs')),
+          title: Center(child: const Text('Add New Job')),
           backgroundColor: Colors.teal,
         ),
         body: SafeArea(
@@ -22,7 +22,25 @@ class _OngoingRepairsMechanicState extends State<OngoingRepairsMechanic> {
               Row(
                 children: const [
                   Text('Vehicle :'),
-                  Text('dropdown'),
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                children: const [
+                  Text('Registration No. :'),
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                  ),
                 ],
               ),
               Row(
@@ -39,7 +57,7 @@ class _OngoingRepairsMechanicState extends State<OngoingRepairsMechanic> {
               ),
               Row(
                 children: const [
-                  Text('Estimated Time :'),
+                  Text('Estimated Completion :'),
                   Expanded(
                     child: TextField(
                       decoration: InputDecoration(
@@ -86,6 +104,12 @@ class _OngoingRepairsMechanicState extends State<OngoingRepairsMechanic> {
                 ],
               ),
               Row(
+                children: const [
+                  Text('Payment Done :'),
+                  Text('add a tick button')
+                ],
+              ),
+              Row(
                 children: [
                   const SizedBox(
                     width: 300,
@@ -93,9 +117,9 @@ class _OngoingRepairsMechanicState extends State<OngoingRepairsMechanic> {
                   ElevatedButton(
                     onPressed: () {},
                     child: const Text('Submit'),
-                  )
+                  ),
                 ],
-              )
+              ),
             ],
           ),
         ),
