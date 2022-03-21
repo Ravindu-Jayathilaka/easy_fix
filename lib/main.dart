@@ -17,5 +17,5 @@ import 'package:easy_fix/LogIn/log%20in%20page.dart';
 import 'package:easy_fix/LogIn/create%20account%20page.dart';
 
 void main() => runApp(MaterialApp(
-      home: MechanicPage(),
+      home: OngoingRepairsMechanic(),
     ));
