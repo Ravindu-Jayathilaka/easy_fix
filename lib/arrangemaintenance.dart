@@ -1,28 +1,27 @@
 import 'package:flutter/material.dart';
 
-class RequestQuotation extends StatefulWidget {
-  const RequestQuotation({Key? key}) : super(key: key);
+class ArrangeMaintenance extends StatefulWidget {
+  const ArrangeMaintenance({Key? key}) : super(key: key);
 
   @override
-  State<RequestQuotation> createState() => _RequestQuotationState();
+  State<ArrangeMaintenance> createState() => _ArrangeMaintenanceState();
 }
 
-class _RequestQuotationState extends State<RequestQuotation> {
+class _ArrangeMaintenanceState extends State<ArrangeMaintenance> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.teal,
-          title: Center(child: Text('Request a quotation')),
+          title: const Center(child: Text('Arrange Maintenance')),
         ),
         body: SafeArea(
           child: Column(
             children: [
               Row(
                 children: const [
-                  Text('Mechanic'),
-                  Text(':'),
+                  Text('Select Vehicle :'),
                   Expanded(
                     child: TextField(
                       decoration: InputDecoration(
@@ -34,8 +33,7 @@ class _RequestQuotationState extends State<RequestQuotation> {
               ),
               Row(
                 children: const [
-                  Text('Vehicle'),
-                  Text(':'),
+                  Text('Select Date :'),
                   Expanded(
                     child: TextField(
                       decoration: InputDecoration(
@@ -47,8 +45,19 @@ class _RequestQuotationState extends State<RequestQuotation> {
               ),
               Row(
                 children: const [
-                  Text('Tasks'),
-                  Text(':'),
+                  Text('Select Time :'),
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                children: const [
+                  Text('Tasks :'),
                   Expanded(
                     child: TextField(
                       decoration: InputDecoration(
