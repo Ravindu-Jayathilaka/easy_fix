@@ -7,6 +7,7 @@ import 'package:easy_fix/addworkshop.dart';
 import 'package:easy_fix/arrangemaintenance.dart';
 import 'package:easy_fix/emergencyassistance.dart';
 import 'package:easy_fix/jobview.dart';
+import 'package:easy_fix/mechanicalerts.dart';
 import 'package:easy_fix/mechanicpage.dart';
 import 'package:easy_fix/mechanicwelcome.dart';
 import 'package:easy_fix/myjobs.dart';
@@ -23,5 +24,5 @@ import 'package:easy_fix/LogIn/log%20in%20page.dart';
 import 'package:easy_fix/LogIn/create%20account%20page.dart';
 
 void main() => runApp(MaterialApp(
-      home: JobView(),
+      home: MechanicAlerts(),
     ));
