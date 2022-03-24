@@ -51,7 +51,7 @@ class _OngoingRepairsMechanicState extends State<OngoingRepairsMechanic> {
               ),
               Row(
                 children: const [
-                  Text('Tasks :'),
+                  Text('Tasks 1:'),
                   Expanded(
                     child: TextField(
                       decoration: InputDecoration(
@@ -59,6 +59,20 @@ class _OngoingRepairsMechanicState extends State<OngoingRepairsMechanic> {
                       ),
                     ),
                   ),
+                  Text('tick')
+                ],
+              ),
+              Row(
+                children: const [
+                  Text('Tasks 2:'),
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                  ),
+                  Text('tick')
                 ],
               ),
               Row(

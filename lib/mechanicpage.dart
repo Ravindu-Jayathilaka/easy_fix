@@ -68,32 +68,39 @@ class _MechanicPageState extends State<MechanicPage> {
               SizedBox(
                 height: 20,
               ),
-              Container(
-                child: Text('Request Emergency Assistance'),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: Colors.teal,
+              Card(
+                child: InkWell(
+                  splashColor: Colors.teal,
+                  onTap: () {},
+                  child: const Text('Request Roadside Assistance'),
                 ),
               ),
-              Container(
-                child: Text('Request A Quotation'),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: Colors.teal,
+              Card(
+                child: InkWell(
+                  splashColor: Colors.teal,
+                  onTap: () {},
+                  child: const Text('Request a Quotation'),
                 ),
               ),
-              Container(
-                child: Text('Arrange Maintenance'),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: Colors.teal,
+              Card(
+                child: InkWell(
+                  splashColor: Colors.teal,
+                  onTap: () {},
+                  child: const Text('Arrange Maintenance'),
                 ),
               ),
-              Container(
-                child: Text('Feedback'),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: Colors.teal,
+              Card(
+                child: InkWell(
+                  splashColor: Colors.teal,
+                  onTap: () {},
+                  child: const Text('My Appointments'),
+                ),
+              ),
+              Card(
+                child: InkWell(
+                  splashColor: Colors.teal,
+                  onTap: () {},
+                  child: const Text('Feedback'),
                 ),
               ),
             ],

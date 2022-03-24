@@ -46,20 +46,34 @@ class _MechanicWelcomeState extends State<MechanicWelcome> {
                   ],
                 ),
               ),
-              Container(
-                child: Text('My Workshop'),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: Colors.teal,
+              Card(
+                child: InkWell(
+                  splashColor: Colors.teal,
+                  onTap: () {},
+                  child: const Text('My Workshops'),
                 ),
               ),
-              Container(
-                child: Text('My Jobs'),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  color: Colors.teal,
+              Card(
+                child: InkWell(
+                  splashColor: Colors.teal,
+                  onTap: () {},
+                  child: const Text('My Jobs'),
                 ),
-              )
+              ),
+              Card(
+                child: InkWell(
+                  splashColor: Colors.teal,
+                  onTap: () {},
+                  child: const Text('My Appointments'),
+                ),
+              ),
+              Card(
+                child: InkWell(
+                  splashColor: Colors.teal,
+                  onTap: () {},
+                  child: const Text('Maintenance Calender'),
+                ),
+              ),
             ],
           ),
         ),

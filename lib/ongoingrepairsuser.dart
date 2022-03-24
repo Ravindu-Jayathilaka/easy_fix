@@ -29,7 +29,13 @@ class _OngoingRepairsUserState extends State<OngoingRepairsUser> {
                 children: [Text('Estimated Time :'), Text('text from db')],
               ),
               Row(
-                children: [Text('Tasks :'), Text('text from db')],
+                children: [Text('Task 1:'), Text('text from db')],
+              ),
+              Row(
+                children: [Text('Task 2:'), Text('text from db')],
+              ),
+              Row(
+                children: [Text('Task 3:'), Text('text from db')],
               ),
               Row(
                 children: [Text('Completed Tasks :'), Text('text from db')],

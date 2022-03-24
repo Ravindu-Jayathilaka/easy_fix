@@ -1,31 +1,33 @@
 import 'package:flutter/material.dart';
 
-class RequestQuotation extends StatefulWidget {
-  const RequestQuotation({Key? key}) : super(key: key);
+class QuotationReply extends StatefulWidget {
+  const QuotationReply({Key? key}) : super(key: key);
 
   @override
-  State<RequestQuotation> createState() => _RequestQuotationState();
+  State<QuotationReply> createState() => _QuotationReplyState();
 }
 
-class _RequestQuotationState extends State<RequestQuotation> {
+class _QuotationReplyState extends State<QuotationReply> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
+          title: Center(
+            child: Text('Send Quotation'),
+          ),
           backgroundColor: Colors.teal,
-          title: Center(child: Text('Request a quotation')),
         ),
         body: SafeArea(
           child: Column(
             children: [
               Row(
                 children: const [
-                  Text('Mechanic'),
-                  Text(':'),
+                  Text('Task 1 from db :'),
                   Expanded(
                     child: TextField(
                       decoration: InputDecoration(
+                        hintText: 'Cost',
                         border: OutlineInputBorder(),
                       ),
                     ),
@@ -34,11 +36,11 @@ class _RequestQuotationState extends State<RequestQuotation> {
               ),
               Row(
                 children: const [
-                  Text('Vehicle'),
-                  Text(':'),
+                  Text('Task 2 from db :'),
                   Expanded(
                     child: TextField(
                       decoration: InputDecoration(
+                        hintText: 'Cost',
                         border: OutlineInputBorder(),
                       ),
                     ),
@@ -47,44 +49,21 @@ class _RequestQuotationState extends State<RequestQuotation> {
               ),
               Row(
                 children: const [
-                  Text('Task 1'),
-                  Text(':'),
-                  Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                      ),
-                    ),
+                  SizedBox(
+                    width: 200,
                   ),
-                ],
-              ),
-              Row(
-                children: const [
-                  Text('Task 2'),
-                  Text(':'),
-                  Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                children: const [
-                  Text('add a button to get new textfield'),
-                  Text(':'),
+                  Text('Total :'),
+                  Text('Total from db')
                 ],
               ),
               Row(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     width: 300,
                   ),
                   ElevatedButton(
                     onPressed: () {},
-                    child: const Text('Submit'),
+                    child: const Text('Send'),
                   ),
                 ],
               ),
