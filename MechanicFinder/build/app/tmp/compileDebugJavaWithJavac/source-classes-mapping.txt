@@ -1,0 +1,6 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+com/mechanic/mechanic_finder/MainActivity.java
+ com.mechanic.mechanic_finder.MainActivity
+com/mechanic/mechanic_finder/BuildConfig.java
+ com.mechanic.mechanic_finder.BuildConfig
