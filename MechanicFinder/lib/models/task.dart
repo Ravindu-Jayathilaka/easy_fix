@@ -1,6 +1,6 @@
 class Task{
   final String id;
-  final String status;
+  final String status; // created -> accept or decline -> finish
   final double estimatedCost;
   final String taskDescription;
   final DateTime appointmentDate;
@@ -22,10 +22,11 @@ class Task{
 
 /****** -STATUS- *********/
 /*
-  created - User create the appointment request
-  accept - Mechanic accept the request.
+  create - User create the appointment request
+  accept - Mechanic accept the request and add the price
+   if it is not there.
   decline - Mechanic decline the appointment due to unavailability
-  start - task is started with mechanic adding the price.
+  start - task is ongoing.
   finished - task is finished. Proceed to payment.
    */
 }

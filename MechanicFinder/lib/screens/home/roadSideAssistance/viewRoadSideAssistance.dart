@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:mechanic_finder/models/mechanicRoadSideAssistance.dart';
 import '../../../models/appUser.dart';
 import '../../../services/auth.dart';
-import '../../../services/roadSideAssistanceService.dart';
 import '../../../shared/sideDrawer.dart';
 
 class ViewRoadSideAssistance extends StatefulWidget {
@@ -15,9 +14,20 @@ class ViewRoadSideAssistance extends StatefulWidget {
 class _ViewRoadSideAssistanceState extends State<ViewRoadSideAssistance> {
 
   final AuthService _auth = AuthService();
+
+  String status = ''; // created -> accept or decline -> finish
+  double price = 0;
+  String task  = '';
+  String userName  = '';
+  String mechanicShopName = '';
+  String vehicleRegNo = '' ;
+  String brand = '';
+  String model = '';
+
   String error = '';
+
   late AppUser appUser;
-  String status = '';
+
   @override
   void initState() {
     super.initState();
@@ -27,9 +37,6 @@ class _ViewRoadSideAssistanceState extends State<ViewRoadSideAssistance> {
   @override
   Widget build(BuildContext context) {
     final assistance = ModalRoute.of(context)!.settings.arguments as MechanicRoadSideAssistance;
-    setState(() {
-      status = status.trim() == '' ? assistance.status : status;
-    });
     return Scaffold(
       backgroundColor: const Color.fromRGBO(231,248,238,1),
       appBar: AppBar(
@@ -37,8 +44,8 @@ class _ViewRoadSideAssistanceState extends State<ViewRoadSideAssistance> {
         leading: IconButton(
             icon: const Icon(Icons.arrow_back_ios_outlined),
             onPressed: () {
-              if(status == 'created' ||
-                  status =='accept'){
+              if(assistance.status == 'created' ||
+                  assistance.status =='accept'){
               Navigator.pushReplacementNamed(context, "/");
               } else {
                 Navigator.pushReplacementNamed(context, "/road-side-assistance-tasks");
@@ -74,7 +81,7 @@ class _ViewRoadSideAssistanceState extends State<ViewRoadSideAssistance> {
                             borderRadius: BorderRadius.circular(6)
                         ),
                         child: ListTile(
-                            title: Text("Status : "+status.toUpperCase(),style: TextStyle(fontSize: 30),)
+                            title: Text("Status : "+assistance.status.toUpperCase(),style: TextStyle(fontSize: 30),)
                         ),
                       ),
                     ),
@@ -106,83 +113,19 @@ class _ViewRoadSideAssistanceState extends State<ViewRoadSideAssistance> {
                         enabled:false,
                       ),
                     ),
-                    if(status == 'decline') ...[
-                      const Padding(
-                        padding: EdgeInsets.all(10),
-                        child: Card(
-                          child: ListTile(
-                              leading: Icon(Icons.warning,color: Colors.red),
-                              title: Text("Mechanic shop do not wish to "
-                                  "proceed with your request at the moment",
-                                style: TextStyle(color: Colors.red),)
-                          ),
-                        ),
-                      )
+                    if(assistance.status == 'decline') ...[
+                      const Text('Mechanic shop do not wish to '
+                          'proceed with your request at the moment',
+                      style: TextStyle(color: Colors.red),)
                     ],
-                    if(status == 'accept') ...[
-                      const Padding(
-                        padding: EdgeInsets.all(10),
-                        child: Card(
-                          child: ListTile(
-                              leading: Icon(Icons.warning),
-                              title: Text("Mechanic is on his way to your location")
-                          ),
-                        ),
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.all(10),
-                        child: Text("Has the task complete ? Proceed to done")
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Text(error,style: const TextStyle(color: Colors.red),)
-                      ),
-                      ElevatedButton(
-                        child: const Text('Done', style: TextStyle(
-                            color: Colors.white, fontSize: 20.0),),
-                        onPressed: () async {
-                          bool success = await RoadSideAssistanceService()
-                              .updateAssistanceRequestStatus(assistance.id,'done');
-
-                          if(success){
-                            setState(() {
-                              status = 'done';
-                              error = '';
-                            });
-                          } else {
-                            error = 'Error in completing the request';
-                          }
-                        },
-                        style: ButtonStyle(
-                          shape: MaterialStateProperty.all<
-                              RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(28.0),
-                              side: const BorderSide(
-                                  color: Color.fromRGBO(
-                                      46, 185, 160, 1)),
-                            ),
-                          ),
-                          minimumSize: MaterialStateProperty.all<Size>(
-                              const Size(120, 45)
-                          ),
-                          backgroundColor: MaterialStateProperty.all<
-                              Color>(
-                              const Color.fromRGBO(46, 185, 160, 1)),
-                        ),
-                      ),
+                    if(assistance.status == 'accept') ...[
+                      const Text('Mechanic is on his way to your location',
+                        style: TextStyle(color: Colors.green),)
                     ],
-                    if(status == 'done') ...[
-                      const Padding(
-                        padding: EdgeInsets.all(10),
-                        child: Card(
-                          child: ListTile(
-                              leading: Icon(Icons.warning),
-                              title: Text("This task is done. Please proceed to the payment")
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 20.0),
+                    if(assistance.status == 'done') ...[
+                      const Text('The task is done. Please proceed to the payment',
+                        style: TextStyle(color: Colors.green),),
+                      const SizedBox(height: 30.0),
                       ElevatedButton(
                         child: const Text('Pay', style: TextStyle(
                             color: Colors.white, fontSize: 20.0),),

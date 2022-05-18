@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mechanic_finder/models/mechanicReview.dart';
+import 'package:mechanic_finder/models/mechanicQuotation.dart';
 import 'package:mechanic_finder/models/vehicle.dart';
-import 'package:mechanic_finder/services/mechanicService.dart';
 import 'package:mechanic_finder/services/userService.dart';
 import 'package:mechanic_finder/services/vehicleService.dart';
 import 'package:mechanic_finder/shared/loading.dart';
@@ -9,6 +8,7 @@ import 'package:mechanic_finder/shared/loading.dart';
 import '../../../models/appUser.dart';
 import '../../../models/mechanic.dart';
 import '../../../services/auth.dart';
+import '../../../services/quotationService.dart';
 
 class RequestQuotation extends StatefulWidget {
   const RequestQuotation({Key? key}) : super(key: key);
@@ -22,8 +22,7 @@ class _RequestQuotationState extends State<RequestQuotation> {
   final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
 
-  double rating = 1;
-  String review = '';
+  String taskDescription = '';
   String? vhlRegNo;
   String vhlBrand = '';
   String vhlModel = '';
@@ -53,7 +52,7 @@ class _RequestQuotationState extends State<RequestQuotation> {
           stream: VehicleService(uid: appUser.uid).vehicles,
           builder: (context, vehicleSnapshot) {
             if (vehicleSnapshot.data != null) {
-              AppUserData? data = userSnapshot.data;
+              AppUserData? userData = userSnapshot.data;
               List<String> dropDownValueList = [];
               List<Vehicle>? vehicleList = vehicleSnapshot.data as List<Vehicle>?;
               vehicleList?.forEach((element) {dropDownValueList.add(element.regNo);});
@@ -103,10 +102,14 @@ class _RequestQuotationState extends State<RequestQuotation> {
                                           if(element.regNo == newValue){
                                             modelController.text = element.model;
                                             brandController.text = element.brand;
+                                            setState(() {
+                                              vhlBrand = element.brand;
+                                              vhlModel = element.model;
+                                            });
                                           }
                                         });
                                       },
-                                      items: <String>[...?dropDownValueList]
+                                      items: <String>[...dropDownValueList]
                                           .map<DropdownMenuItem<String>>((
                                           String value) {
                                         return DropdownMenuItem<String>(
@@ -150,7 +153,7 @@ class _RequestQuotationState extends State<RequestQuotation> {
                                       ? 'Enter the description'
                                       : null,
                                   onChanged: (val) {
-                                    setState(() => review = val);
+                                    setState(() => taskDescription = val);
                                   },
                                   decoration: const InputDecoration(
                                     border: OutlineInputBorder(),
@@ -168,11 +171,12 @@ class _RequestQuotationState extends State<RequestQuotation> {
                                       color: Colors.white, fontSize: 20.0),),
                                   onPressed: () async {
                                     if (_formKey.currentState!.validate()) {
-                                      MechanicReview mechanicReview = MechanicReview(
-                                          'null', rating.round(), review,
-                                          appUser.uid, data?.name ?? '');
-                                      bool success = await MechanicService()
-                                          .addReview(mechanicReview, mechanic.id);
+                                      MechanicQuotation quotation = MechanicQuotation(
+                                        '','created',0,taskDescription,appUser.uid, userData?.name ?? '',
+                                        mechanic.id,mechanic.name,vhlRegNo!,vhlBrand,vhlModel
+                                      );
+                                      bool success = await QuotationService()
+                                          .addQuotation(quotation);
                                       if (success) {
                                         Navigator.pushNamed(
                                           context,

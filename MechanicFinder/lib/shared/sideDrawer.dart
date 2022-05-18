@@ -89,6 +89,51 @@ class _SideDrawerState extends State<SideDrawer> {
                         ),
                         ListTile(
                           leading: const Icon(
+                            Icons.add_chart,
+                            color: Colors.white,
+                          ),
+                          title: const Text(
+                            'Quotations',
+                            style: TextStyle(
+                                color: Colors.white
+                            ),
+                          ),
+                          onTap: () {
+                            Navigator.pushNamed(context, '/quotations');
+                          },
+                        ),
+                        ListTile(
+                          leading: const Icon(
+                            Icons.vpn_key,
+                            color: Colors.white,
+                          ),
+                          title: const Text(
+                            'All Repair Tasks',
+                            style: TextStyle(
+                                color: Colors.white
+                            ),
+                          ),
+                          onTap: () {
+                            Navigator.pushNamed(context, '/tasks');
+                          },
+                        ),
+                        ListTile(
+                          leading: const Icon(
+                            Icons.alt_route_sharp,
+                            color: Colors.white,
+                          ),
+                          title: const Text(
+                            'All Roadside Assistance',
+                            style: TextStyle(
+                                color: Colors.white
+                            ),
+                          ),
+                          onTap: () {
+                            Navigator.pushNamed(context, '/road-side-assistance-tasks');
+                          },
+                        ),
+                        ListTile(
+                          leading: const Icon(
                             Icons.directions_car,
                             color: Colors.white,
                           ),

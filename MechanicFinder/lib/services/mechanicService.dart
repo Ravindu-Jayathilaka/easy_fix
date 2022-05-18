@@ -3,8 +3,17 @@ import 'package:mechanic_finder/models/mechanic.dart';
 import 'package:mechanic_finder/models/mechanicReview.dart';
 
 class MechanicService {
-  String mechanicId = '';
   final CollectionReference mechanicCollection = FirebaseFirestore.instance.collection("mechanics");
+
+  Mechanic _mechanicFromSnapshot(DocumentSnapshot snapshot){
+    return Mechanic(
+      snapshot.id,
+      snapshot.get("name"),
+      snapshot.get("owner"),
+      snapshot.get("latitude"),
+      snapshot.get("longitude"),
+    );
+  }
 
   List<Mechanic> _mechanicsFromSnapshot(QuerySnapshot snapshots){
     List<Mechanic> mechanics = [];
@@ -62,6 +71,11 @@ class MechanicService {
     return mechanicCollection
         .doc(mechanic_id).collection("reviews")
         .snapshots().map((snapshot) => _reviewsFromSnapshot(snapshot));
+  }
+
+  Future<Mechanic> getMechanicFromId(mechanic_id) async {
+    DocumentSnapshot snapshot = await mechanicCollection.doc(mechanic_id).get();
+    return _mechanicFromSnapshot(snapshot);
   }
 
 }

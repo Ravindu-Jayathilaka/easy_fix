@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:mechanic_finder/models/mechanic.dart';
+import 'package:mechanic_finder/models/mechanicQuotation.dart';
 import 'package:mechanic_finder/models/mechanicReview.dart';
 import 'package:mechanic_finder/services/mechanicService.dart';
 import 'package:mechanic_finder/shared/appCard.dart';
 import 'package:mechanic_finder/shared/loading.dart';
+
+import '../../../models/appointmentScreenArgs.dart';
 
 
 class MechanicHome extends StatefulWidget {
@@ -76,7 +79,16 @@ class _MechanicHomeState extends State<MechanicHome> {
                     Container(
                       width: (MediaQuery.of(context).size.width)/2,
                       height: 88,
-                      child: const AppCard(details: 'Road Side Assistance',color:Colors.green),
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.pushNamed(
+                            context,
+                            '/road-side-assistance-mechanic',
+                            arguments: mechanic,
+                          );
+                        },
+                        child: const AppCard(details: 'Road Side Assistance',color:Colors.green)
+                      ),
                     ),
                     Container(
                       width: (MediaQuery.of(context).size.width)/2,
@@ -99,7 +111,17 @@ class _MechanicHomeState extends State<MechanicHome> {
                     Container(
                       width: (MediaQuery.of(context).size.width)/2,
                       height: 88,
-                      child: const AppCard(details: 'Arrange Maintenance',color:Colors.blue),
+                      child: GestureDetector(
+                          onTap: (){
+                            Navigator.pushNamed(
+                              context,
+                              '/appointment-mechanic',
+                              arguments:new AppointmentScreenArgs(mechanic, MechanicQuotation.empty())
+                            );
+                          },
+                        child: const AppCard(details: 'Arrange Maintenance',color:Colors.blue),
+                      ),
+
                     ),
                     Container(
                       width: (MediaQuery.of(context).size.width)/2,
