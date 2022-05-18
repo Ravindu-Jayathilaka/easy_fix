@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "443552448925",
+    "project_id": "mechanic-finder-e3771",
+    "storage_bucket": "mechanic-finder-e3771.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:443552448925:android:7cbc894fce4f0f0e96af74",
+        "android_client_info": {
+          "package_name": "com.mechanic.mechanic_finder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "443552448925-aitobf46apmumi73h13u1kqs0guqeplo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqiPZYr3EjPSvSSUuKPXjq_aqsKa-OLi8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "443552448925-aitobf46apmumi73h13u1kqs0guqeplo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "443552448925-3dldu861h3glcu1opoinq04q795qhkal.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mechanicfindermechanic.mechanicFinderMechanic"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:443552448925:android:288c38e130d1e82b96af74",
+        "android_client_info": {
+          "package_name": "com.mechanic_finder_mechanic.mechanic_finder_mechanic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "443552448925-aitobf46apmumi73h13u1kqs0guqeplo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqiPZYr3EjPSvSSUuKPXjq_aqsKa-OLi8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "443552448925-aitobf46apmumi73h13u1kqs0guqeplo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "443552448925-3dldu861h3glcu1opoinq04q795qhkal.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mechanicfindermechanic.mechanicFinderMechanic"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

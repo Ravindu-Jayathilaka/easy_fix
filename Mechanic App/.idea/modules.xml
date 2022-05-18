@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/mechanic_finder_mechanic/mechanic_finder_mechanic.iml" filepath="$PROJECT_DIR$/mechanic_finder_mechanic/mechanic_finder_mechanic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mechanic_finder_mechanic/android/mechanic_finder_mechanic_android.iml" filepath="$PROJECT_DIR$/mechanic_finder_mechanic/android/mechanic_finder_mechanic_android.iml" />
+    </modules>
+  </component>
+</project>
