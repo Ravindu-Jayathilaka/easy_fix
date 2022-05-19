@@ -180,6 +180,11 @@ class _RequestRoadSideAssistanceState extends State<RequestRoadSideAssistance> {
                                         zoom: 14,
                                       ),
                                       onMapCreated:_onMapCreator,
+                                      onCameraMove: (CameraPosition cameraPositiona) {
+                                        setState(() {
+                                          cameraPosition = cameraPositiona;
+                                        });
+                                      },
                                       onCameraIdle: () async {
                                         setState(() {
                                           longitude = cameraPosition!.target.longitude;
