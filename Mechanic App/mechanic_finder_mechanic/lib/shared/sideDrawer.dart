@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../models/appUser.dart';
 import '../services/authService.dart';
 import '../services/userService.dart';
-import 'loading.dart';
 
 class SideDrawer extends StatefulWidget {
 
@@ -71,8 +70,69 @@ class _SideDrawerState extends State<SideDrawer> {
                           Navigator.pushNamed(context, '/');
                         },
                       ),
+                      ListTile(
+                        leading: const Icon(
+                          Icons.alt_route_sharp,
+                          color: Colors.white,
+                        ),
+                        title: const Text(
+                          'All Roadside Assistance',
+                          style: TextStyle(
+                              color: Colors.white
+                          ),
+                        ),
+                        onTap: () {
+                          Navigator.pushNamed(context, '/road-side-assistance-tasks');
+                        },
+                      ),
+                      ListTile(
+                        leading: const Icon(
+                          Icons.vpn_key,
+                          color: Colors.white,
+                        ),
+                        title: const Text(
+                          'All Repair Tasks',
+                          style: TextStyle(
+                              color: Colors.white
+                          ),
+                        ),
+                        onTap: () {
+                          Navigator.pushNamed(context, '/tasks');
+                        },
+                      ),
+                      ListTile(
+                        leading: const Icon(
+                          Icons.calendar_today_rounded,
+                          color: Colors.white,
+                        ),
+                        title: const Text(
+                          'Appointments',
+                          style: TextStyle(
+                              color: Colors.white
+                          ),
+                        ),
+                        onTap: () {
+                          Navigator.pushNamed(context, '/appointments');
+                        },
+                      ),
+                      ListTile(
+                        leading: const Icon(
+                          Icons.settings,
+                          color: Colors.white,
+                        ),
+                        title: const Text(
+                          'Ongoing Tasks',
+                          style: TextStyle(
+                              color: Colors.white
+                          ),
+                        ),
+                        onTap: () {
+                          Navigator.pushNamed(context, '/ongoing-tasks');
+                        },
+                      ),
                     ],
                   ),
+
                 ),
                 Align(
                   alignment: FractionalOffset.bottomCenter,
