@@ -184,9 +184,17 @@ class _ViewTaskState extends State<ViewTask> {
                       ),
                     ],
                     if(task.status == 'decline') ...[
-                      const Text('Mechanic shop do not wish to '
-                          'proceed with your request at the moment',
-                      style: TextStyle(color: Colors.red),)
+                      const Padding(
+                        padding: EdgeInsets.all(10),
+                        child: Card(
+                          child: ListTile(
+                              leading: Icon(Icons.warning,color: Colors.red),
+                              title: Text("Mechanic shop do not wish to "
+                                  "proceed with your request at the moment",
+                                style: TextStyle(color: Colors.red),)
+                          ),
+                        ),
+                      )
                     ]
                   ],
                 )

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mechanic_finder/models/appointmentScreenArgs.dart';
+import 'package:mechanic_finder/models/screenArgs/appointmentScreenArgs.dart';
 import 'package:mechanic_finder/models/mechanicQuotation.dart';
 import 'package:mechanic_finder/services/mechanicService.dart';
 import '../../../models/appUser.dart';

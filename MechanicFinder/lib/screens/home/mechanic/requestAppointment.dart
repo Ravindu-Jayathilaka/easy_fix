@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
-import 'package:mechanic_finder/models/appointmentScreenArgs.dart';
+import 'package:mechanic_finder/models/screenArgs/appointmentScreenArgs.dart';
 import 'package:mechanic_finder/models/vehicle.dart';
 import 'package:mechanic_finder/services/taskService.dart';
 import 'package:mechanic_finder/services/userService.dart';
@@ -9,7 +9,6 @@ import 'package:mechanic_finder/shared/loading.dart';
 import 'package:intl/intl.dart';
 
 import '../../../models/appUser.dart';
-import '../../../models/mechanic.dart';
 import '../../../models/task.dart';
 import '../../../services/auth.dart';
 

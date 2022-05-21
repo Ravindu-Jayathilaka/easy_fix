@@ -83,7 +83,7 @@ class _RequestQuotationState extends State<RequestQuotation> {
                             key: _formKey,
                             child: Column(
                               children: [
-                                const SizedBox(height: 40.0),
+                                const SizedBox(height: 20.0),
                                 InputDecorator(
                                   decoration: const InputDecoration(
                                       border: OutlineInputBorder()),

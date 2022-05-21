@@ -134,10 +134,10 @@ class _HomeState extends State<Home> {
                       ),
                     ],
                     if(!assistanceList.isNotEmpty)...[
-                      Container(
-                        height: 650,
-                        padding: const EdgeInsets.all(10),
-                        child: const FindMechanicMap()
+                      const Expanded(
+                        child: Padding(
+                          padding: EdgeInsets.all(10),
+                          child: FindMechanicMap())
                       ),
                     ]
                   ],

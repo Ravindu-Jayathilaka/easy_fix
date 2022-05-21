@@ -62,4 +62,14 @@ class RoadSideAssistanceService {
         .where('user_id',isEqualTo: uid).where('status', whereIn:['created','accept'])
         .snapshots().map((snapshot) => _assistanceRequestsFromSnapshot(snapshot));
   }
+
+  Future<bool> updateAssistanceRequestStatus(String requestId, String status) async {
+    try{
+      await assistanceCollection.doc(requestId)
+          .update({'status' : status});
+      return true;
+    }catch (e){
+      return false;
+    }
+  }
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:mechanic_finder/models/screenArgs/roadSideAssistantScreenArgs.dart';
 import 'package:mechanic_finder/models/vehicle.dart';
-import 'package:mechanic_finder/services/roadSideAssistanceService.dart';
 import 'package:mechanic_finder/services/userService.dart';
 import 'package:mechanic_finder/services/vehicleService.dart';
 import 'package:mechanic_finder/shared/loading.dart';
@@ -10,7 +9,6 @@ import '../../../models/appUser.dart';
 import '../../../models/mechanic.dart';
 import '../../../models/mechanicRoadSideAssistance.dart';
 import '../../../services/auth.dart';
-import '../../../shared/util.dart';
 
 class RequestRoadSideAssistance extends StatefulWidget {
   const RequestRoadSideAssistance({Key? key}) : super(key: key);
@@ -34,24 +32,11 @@ class _RequestRoadSideAssistanceState extends State<RequestRoadSideAssistance> {
   late AppUser appUser;
 
   var vehicleController = TextEditingController();
-  static const LatLng showLocation = const LatLng(6.821700, 80.045803); //location to show in map
-  late final GoogleMapController mapController;
-  final Set<Marker> markers = Set();
-  CameraPosition? cameraPosition;
-  double longitude = showLocation.longitude;
-  double latitude = showLocation.latitude;
 
   @override
   void initState() {
     super.initState();
     appUser = _auth.getCurrentUser()!;
-  }
-
-  void _onMapCreator(GoogleMapController controller){
-    setState(() {
-      this.mapController = controller;
-      controller.setMapStyle(Utils.mapStyle);
-    });
   }
 
   @override
@@ -167,61 +152,21 @@ class _RequestRoadSideAssistanceState extends State<RequestRoadSideAssistance> {
                                 minLines: 3,
                               ),
                               const SizedBox(height: 30.0),
-                              SizedBox(
-                                height: 350,
-                                child: Stack(
-                                  children: [
-                                    GoogleMap(
-                                      zoomGesturesEnabled: true,
-                                      mapType: MapType.normal,
-                                      markers: markers,
-                                      initialCameraPosition: CameraPosition(
-                                        target: showLocation,
-                                        zoom: 14,
-                                      ),
-                                      onMapCreated:_onMapCreator,
-                                      onCameraMove: (CameraPosition cameraPositiona) {
-                                        setState(() {
-                                          cameraPosition = cameraPositiona;
-                                        });
-                                      },
-                                      onCameraIdle: () async {
-                                        setState(() {
-                                          longitude = cameraPosition!.target.longitude;
-                                          latitude = cameraPosition!.target.latitude;
-                                        });
-                                      },
-                                    ),
-                                    Center( //picker image on google map
-                                      child: Image.asset('images/picker.png', width: 30,),
-                                    ),
-                                  ],
-                                ),
-                              ),
-
-                              const SizedBox(height: 30.0),
                               ElevatedButton(
-                                child: const Text('Create', style: TextStyle(
+                                child: const Text('Next', style: TextStyle(
                                     color: Colors.white, fontSize: 20.0),),
                                 onPressed: () async {
                                   if (_formKey.currentState!.validate()) {
                                     MechanicRoadSideAssistance assitance = MechanicRoadSideAssistance(
-                                      '','created',problemDescription, DateTime.now(),longitude,latitude,appUser.uid, userData?.name ?? '',
+                                      '','created',problemDescription, DateTime.now(),0,0,appUser.uid, userData?.name ?? '',
                                       mechanic.id,mechanic.name,vhlRegNo!,vhlBrand,vhlModel
                                     );
-                                    bool success = await RoadSideAssistanceService()
-                                        .addRoadSideAssistance(assitance);
-                                    if (success) {
-                                      Navigator.pushNamed(
-                                        context,
-                                        '/',
-                                        arguments: mechanic,
-                                      );
-                                    } else {
-                                      setState(() {
-                                        error = 'Adding the new assistance request failed';
-                                      });
-                                    }
+                                    RoadSideAssistanceScreenArgs args = RoadSideAssistanceScreenArgs(mechanic,assitance);
+                                    Navigator.pushNamed(
+                                      context,
+                                      '/assistance-location-select-mechanic',
+                                      arguments: args,
+                                    );
                                   }
                                 },
                                 style: ButtonStyle(

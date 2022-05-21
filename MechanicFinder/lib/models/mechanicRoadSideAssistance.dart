@@ -3,8 +3,8 @@ class MechanicRoadSideAssistance {
   final String status; // created -> accept or decline -> finish
   final String problemDescription;
   final DateTime requestDate;
-  final double longitude;
-  final double latitude;
+  double longitude;
+  double latitude;
   final String userId;
   final String userName;
   final String mechanicId;

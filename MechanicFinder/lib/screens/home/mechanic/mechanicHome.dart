@@ -6,7 +6,7 @@ import 'package:mechanic_finder/services/mechanicService.dart';
 import 'package:mechanic_finder/shared/appCard.dart';
 import 'package:mechanic_finder/shared/loading.dart';
 
-import '../../../models/appointmentScreenArgs.dart';
+import '../../../models/screenArgs/appointmentScreenArgs.dart';
 
 
 class MechanicHome extends StatefulWidget {

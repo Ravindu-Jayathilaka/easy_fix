@@ -17,6 +17,7 @@ import 'package:provider/provider.dart';
 import '../models/appUser.dart';
 import 'home/home.dart';
 import 'home/mechanic/findMechanic.dart';
+import 'home/mechanic/requestAssistanceLocationSelect.dart';
 import 'home/mechanic/requestQuotation.dart';
 import 'home/vehicle/viewVehicles.dart';
 
@@ -37,6 +38,8 @@ class Wrapper extends StatelessWidget {
             '/appointment-mechanic': (context) => const RequestAppointment(),
             '/road-side-assistance-mechanic':
                 (context) => const RequestRoadSideAssistance(),
+            '/assistance-location-select-mechanic':
+                (context) => const RequestAssistanceLocationSelect(),
             '/vehicles': (context) => const Vehicles(),
             '/add-vehicles': (context) => const AddVehicles(),
             '/view-vehicles': (context) => const ViewVehicles(),

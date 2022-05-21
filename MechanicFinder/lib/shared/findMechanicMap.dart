@@ -21,7 +21,7 @@ class _FindMechanicMapState extends State<FindMechanicMap> {
 
   void _onMapCreator(GoogleMapController controller){
     setState(() {
-      this.mapController = controller;
+      mapController = controller;
       controller.setMapStyle(Utils.mapStyle);
     });
   }
@@ -58,7 +58,7 @@ class _FindMechanicMapState extends State<FindMechanicMap> {
             body: GoogleMap(
               mapType: MapType.normal,
               markers: markers,
-              initialCameraPosition: CameraPosition(
+              initialCameraPosition: const CameraPosition(
                 target: showLocation,
                 zoom: 14,
               ),
@@ -66,7 +66,7 @@ class _FindMechanicMapState extends State<FindMechanicMap> {
             ),
           );
         } else {
-          return Loading();
+          return const Loading();
         }
       }
     );
