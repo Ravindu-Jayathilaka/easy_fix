@@ -49,4 +49,14 @@ class TaskService {
       .where('mechanic_id',isEqualTo: uid).where('status', whereIn:['start'])
       .snapshots().map((snapshot) => _taskFromSnapshot(snapshot));
   }
+
+  Future<bool> updateAppointmentRequestStatus(String requestId, String status) async {
+    try{
+      await taskCollection.doc(requestId)
+          .update({'status' : status});
+      return true;
+    }catch (e){
+      return false;
+    }
+  }
 }

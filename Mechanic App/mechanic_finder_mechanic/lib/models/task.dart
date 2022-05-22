@@ -22,7 +22,7 @@ class Task{
 
 /****** -STATUS- *********/
 /*
-  create - User create the appointment request
+  created - User create the appointment request
   accept - Mechanic accept the request.
   decline - Mechanic decline the appointment due to unavailability
   start - task is started with mechanic adding the price.
