@@ -109,40 +109,42 @@ class _RequestAppointmentState extends State<RequestAppointment> {
                           key: _formKey,
                           child: Column(
                             children: [
-                              const SizedBox(height: 40.0),
-                              InputDecorator(
-                                decoration: const InputDecoration(
-                                    border: OutlineInputBorder()),
-                                child: DropdownButtonHideUnderline(
-                                  child: DropdownButton<String>(
-                                    value: vhlRegNo,
-                                    hint: const Text('Select the Vehicle'),
-                                    icon: const Icon(Icons.arrow_downward),
-                                    elevation: 16,
-                                    style: const TextStyle(color: Colors.black),
-                                    onChanged: (String? newValue) {
-                                      setState(() {
-                                        vhlRegNo = newValue!;
-                                      });
-                                      vehicleList?.forEach((element) {
-                                        if(element.regNo == newValue){
-                                          modelController.text = element.model;
-                                          brandController.text = element.brand;
-                                          setState(() {
-                                            vhlBrand = element.brand;
-                                            vhlModel = element.model;
-                                          });
-                                        }
-                                      });
-                                    },
-                                    items: <String>[...dropDownValueList]
-                                        .map<DropdownMenuItem<String>>((
-                                        String value) {
-                                      return DropdownMenuItem<String>(
-                                        value: value,
-                                        child: Text(value),
-                                      );
-                                    }).toList(),
+                              SizedBox(
+                                height: 60,
+                                child: InputDecorator(
+                                  decoration: const InputDecoration(
+                                      border: OutlineInputBorder()),
+                                  child: DropdownButtonHideUnderline(
+                                    child: DropdownButton<String>(
+                                      value: vhlRegNo,
+                                      hint: const Text('Select the Vehicle'),
+                                      icon: const Icon(Icons.arrow_downward),
+                                      elevation: 16,
+                                      style: const TextStyle(color: Colors.black),
+                                      onChanged: (String? newValue) {
+                                        setState(() {
+                                          vhlRegNo = newValue!;
+                                        });
+                                        vehicleList?.forEach((element) {
+                                          if(element.regNo == newValue){
+                                            modelController.text = element.model;
+                                            brandController.text = element.brand;
+                                            setState(() {
+                                              vhlBrand = element.brand;
+                                              vhlModel = element.model;
+                                            });
+                                          }
+                                        });
+                                      },
+                                      items: <String>[...dropDownValueList]
+                                          .map<DropdownMenuItem<String>>((
+                                          String value) {
+                                        return DropdownMenuItem<String>(
+                                          value: value,
+                                          child: Text(value),
+                                        );
+                                      }).toList(),
+                                    ),
                                   ),
                                 ),
                               ),
@@ -214,7 +216,7 @@ class _RequestAppointmentState extends State<RequestAppointment> {
                                   );
                                 },
                               ),
-                              const SizedBox(height: 40.0),
+                              const SizedBox(height: 20.0),
                               TextFormField(
                                 initialValue: quotation.task,
                                 validator: (val) =>
@@ -231,14 +233,13 @@ class _RequestAppointmentState extends State<RequestAppointment> {
                                 maxLines: 7,
                                 minLines: 5,
                               ),
-                              const SizedBox(height: 30.0),
-                              const SizedBox(height: 30.0),
+                              const SizedBox(height: 20.0),
                               ElevatedButton(
                                 child: const Text('Add', style: TextStyle(
                                     color: Colors.white, fontSize: 20.0),),
                                 onPressed: () async {
                                   if (_formKey.currentState!.validate()) {
-                                    Task task = Task('','created',0,taskDescription,appointmentDateTime,appointmentDateTime,
+                                    Task task = Task('','created',0,0,taskDescription,appointmentDateTime,appointmentDateTime,
                                         appointmentDateTime, appUser.uid,userData?.name ?? '', mechanic.id,
                                         mechanic.name,vhlRegNo!,vhlBrand,vhlModel,0);
                                     bool success = await TaskService()

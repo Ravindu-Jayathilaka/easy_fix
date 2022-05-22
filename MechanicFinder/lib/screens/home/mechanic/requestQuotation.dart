@@ -83,44 +83,46 @@ class _RequestQuotationState extends State<RequestQuotation> {
                             key: _formKey,
                             child: Column(
                               children: [
-                                const SizedBox(height: 20.0),
-                                InputDecorator(
-                                  decoration: const InputDecoration(
-                                      border: OutlineInputBorder()),
-                                  child: DropdownButtonHideUnderline(
-                                    child: DropdownButton<String>(
-                                      value: vhlRegNo,
-                                      hint: const Text('Select the Vehicle'),
-                                      icon: const Icon(Icons.arrow_downward),
-                                      elevation: 16,
-                                      style: const TextStyle(color: Colors.black),
-                                      onChanged: (String? newValue) {
-                                        setState(() {
-                                          vhlRegNo = newValue!;
-                                        });
-                                        vehicleList?.forEach((element) {
-                                          if(element.regNo == newValue){
-                                            modelController.text = element.model;
-                                            brandController.text = element.brand;
-                                            setState(() {
-                                              vhlBrand = element.brand;
-                                              vhlModel = element.model;
-                                            });
-                                          }
-                                        });
-                                      },
-                                      items: <String>[...dropDownValueList]
-                                          .map<DropdownMenuItem<String>>((
-                                          String value) {
-                                        return DropdownMenuItem<String>(
-                                          value: value,
-                                          child: Text(value),
-                                        );
-                                      }).toList(),
+                                SizedBox(
+                                  height: 60,
+                                  child: InputDecorator(
+                                    decoration: const InputDecoration(
+                                        border: OutlineInputBorder()),
+                                    child: DropdownButtonHideUnderline(
+                                      child: DropdownButton<String>(
+                                        value: vhlRegNo,
+                                        hint: const Text('Select the Vehicle'),
+                                        icon: const Icon(Icons.arrow_downward),
+                                        elevation: 16,
+                                        style: const TextStyle(color: Colors.black),
+                                        onChanged: (String? newValue) {
+                                          setState(() {
+                                            vhlRegNo = newValue!;
+                                          });
+                                          vehicleList?.forEach((element) {
+                                            if(element.regNo == newValue){
+                                              modelController.text = element.model;
+                                              brandController.text = element.brand;
+                                              setState(() {
+                                                vhlBrand = element.brand;
+                                                vhlModel = element.model;
+                                              });
+                                            }
+                                          });
+                                        },
+                                        items: <String>[...dropDownValueList]
+                                            .map<DropdownMenuItem<String>>((
+                                            String value) {
+                                          return DropdownMenuItem<String>(
+                                            value: value,
+                                            child: Text(value),
+                                          );
+                                        }).toList(),
+                                      ),
                                     ),
                                   ),
                                 ),
-                                const SizedBox(height: 40.0),
+                                const SizedBox(height: 20.0),
                                 TextFormField(
                                   decoration: const InputDecoration(
                                     border: OutlineInputBorder(),
@@ -133,7 +135,7 @@ class _RequestQuotationState extends State<RequestQuotation> {
                                       ? 'Select the Vehicle'
                                       : null,
                                 ),
-                                const SizedBox(height: 40.0),
+                                const SizedBox(height: 20.0),
                                 TextFormField(
                                   decoration: const InputDecoration(
                                     border: OutlineInputBorder(),
@@ -146,7 +148,7 @@ class _RequestQuotationState extends State<RequestQuotation> {
                                       ? 'Select the Vehicle'
                                       : null,
                                 ),
-                                const SizedBox(height: 40.0),
+                                const SizedBox(height: 20.0),
                                 TextFormField(
                                   validator: (val) =>
                                   val!.isEmpty
@@ -162,10 +164,10 @@ class _RequestQuotationState extends State<RequestQuotation> {
                                   maxLines: 7,
                                   minLines: 5,
                                 ),
-                                const SizedBox(height: 30.0),
+                                const SizedBox(height: 20.0),
                                 const Text(
                                     "Note : Price can be slightly different after the vehical inspection"),
-                                const SizedBox(height: 30.0),
+                                const SizedBox(height: 20.0),
                                 ElevatedButton(
                                   child: const Text('Add', style: TextStyle(
                                       color: Colors.white, fontSize: 20.0),),

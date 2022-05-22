@@ -2,6 +2,7 @@ class Task{
   final String id;
   final String status;
   final double estimatedCost;
+  final double totalCost;
   final String taskDescription;
   final DateTime appointmentDate;
   final DateTime startedDate;
@@ -15,7 +16,7 @@ class Task{
   final String model;
   final int completePercentage;
 
-  Task(this.id, this.status, this.estimatedCost, this.taskDescription,
+  Task(this.id, this.status, this.estimatedCost,this.totalCost, this.taskDescription,
       this.appointmentDate, this.startedDate, this.estimatedFinishedDate,
       this.userId, this.userName, this.mechanicId, this.mechanicShopName,
       this.vehicleRegNo, this.brand, this.model,this.completePercentage);
@@ -26,6 +27,6 @@ class Task{
   accept - Mechanic accept the request.
   decline - Mechanic decline the appointment due to unavailability
   start - task is started with mechanic adding the price.
-  finished - task is finished. Proceed to payment.
+  done - task is finished. Proceed to payment.
    */
 }

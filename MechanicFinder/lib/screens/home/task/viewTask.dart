@@ -109,7 +109,7 @@ class _ViewTaskState extends State<ViewTask> {
                         enabled:false,
                       ),
                     ),
-                    if(task.status != 'decline' && task.estimatedCost > 0 )...[
+                    if((task.status == ' created' || task.status == 'accept') && task.estimatedCost > 0 )...[
                       Padding(
                         padding: const EdgeInsets.fromLTRB(10,20,10,0),
                         child: TextFormField(
@@ -124,7 +124,7 @@ class _ViewTaskState extends State<ViewTask> {
                         ),
                       ),
                     ],
-                    if(task.status == 'created')...[
+                    if(task.status == 'created'|| task.status == 'accept')...[
                       Padding(
                         padding: const EdgeInsets.fromLTRB(10,20,10,0),
                         child: TextFormField(
@@ -180,6 +180,23 @@ class _ViewTaskState extends State<ViewTask> {
                           ),
                           initialValue: task.completePercentage.toString(),
                           enabled:false,
+                        ),
+                      ),
+                      const SizedBox(height: 20,)
+                    ],
+                    if(task.status=='done')...[
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(10,20,10,0),
+                        child: TextFormField(
+                          decoration: const InputDecoration(
+                            prefix:Text("Rs "),
+                            disabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.black, width: 1.0),
+                            ),
+                            labelText: 'Total Cost',
+                          ),
+                          initialValue: task.totalCost.toString(),
+                          enabled: false,
                         ),
                       ),
                     ],

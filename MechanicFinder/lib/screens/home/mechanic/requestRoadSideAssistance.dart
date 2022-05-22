@@ -83,7 +83,6 @@ class _RequestRoadSideAssistanceState extends State<RequestRoadSideAssistance> {
                           key: _formKey,
                           child: Column(
                             children: [
-                              const SizedBox(height: 10.0),
                               SizedBox(
                                 height: 60,
                                 child: InputDecorator(
@@ -122,7 +121,7 @@ class _RequestRoadSideAssistanceState extends State<RequestRoadSideAssistance> {
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 40.0),
+                              const SizedBox(height: 20.0),
                               TextFormField(
                                 decoration: const InputDecoration(
                                   border: OutlineInputBorder(),
@@ -135,7 +134,7 @@ class _RequestRoadSideAssistanceState extends State<RequestRoadSideAssistance> {
                                     ? 'Select the Vehicle'
                                     : null,
                               ),
-                              const SizedBox(height: 40.0),
+                              const SizedBox(height: 20.0),
                               TextFormField(
                                 validator: (val) =>
                                 val!.isEmpty
@@ -151,7 +150,7 @@ class _RequestRoadSideAssistanceState extends State<RequestRoadSideAssistance> {
                                 maxLines: 4,
                                 minLines: 3,
                               ),
-                              const SizedBox(height: 30.0),
+                              const SizedBox(height: 20.0),
                               ElevatedButton(
                                 child: const Text('Next', style: TextStyle(
                                     color: Colors.white, fontSize: 20.0),),

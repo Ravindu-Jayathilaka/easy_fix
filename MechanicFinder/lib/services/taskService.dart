@@ -13,6 +13,7 @@ class TaskService {
           snapshots.docs[i].id,
           snapshots.docs[i]["status"],
           snapshots.docs[i]["estimated_cost"],
+          snapshots.docs[i]["total_cost"],
           snapshots.docs[i]["task_description"],
           (snapshots.docs[i]["appointment_date"] as Timestamp).toDate(),
           (snapshots.docs[i]["started_date"] as Timestamp).toDate(),
@@ -36,6 +37,7 @@ class TaskService {
       await taskCollection.add({
         'status': task.status,
         'estimated_cost': task.estimatedCost,
+        'total_cost': task.totalCost,
         'task_description': task.taskDescription,
         'appointment_date': task.appointmentDate,
         'started_date': task.startedDate,
