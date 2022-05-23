@@ -60,7 +60,7 @@ class _AppointmentsState extends State<Appointments> {
                       borderRadius: BorderRadius.circular(6)
                   ),
                   child: ListTile(
-                    title: Text("Shop : " + (data[index].mechanicShopName)),
+                    title: Text("Customer : " + (data[index].userName)),
                     subtitle: Padding(
                       padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                       child: Row(
