@@ -38,22 +38,25 @@ class _RegisterState extends State<Register> {
                 child: Column(
                   children: [
                     const SizedBox(height: 100.0),
-                    Row(
-                      children: [
-                        const Text("EASY",
-                          style: TextStyle(
-                            fontSize: 60,
-                            color: Colors.green,
-                            fontWeight: FontWeight.w800,
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Row(
+                        children: const [
+                          Text("EASY",
+                            style: TextStyle(
+                              fontSize: 60,
+                              color: Colors.green,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),Text(" FIX",
+                            style: TextStyle(
+                              fontSize: 60,
+                              color: Colors.blue,
+                              fontWeight: FontWeight.w800,
+                            ),
                           ),
-                        ),const Text(" FIX",
-                          style: TextStyle(
-                            fontSize: 60,
-                            color: Colors.blue,
-                            fontWeight: FontWeight.w800,
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                     const SizedBox(height: 50.0),
                     TextFormField(

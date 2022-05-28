@@ -5,9 +5,8 @@ import '../../shared/loading.dart';
 
 
 class SignIn extends StatefulWidget {
-  final Function toggleView;
 
-  const SignIn({Key? key,required this.toggleView}) : super(key: key);
+  const SignIn({Key? key}) : super(key: key);
 
   @override
   State<SignIn> createState() => _SignInState();
@@ -38,22 +37,25 @@ class _SignInState extends State<SignIn> {
                 child: Column(
                   children: [
                     const SizedBox(height: 100.0),
-                    Row(
-                      children: const [
-                        Text("EASY",
-                          style: TextStyle(
-                            fontSize: 60,
-                            color: Colors.green,
-                            fontWeight: FontWeight.w800,
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Row(
+                        children: const [
+                          Text("EASY",
+                            style: TextStyle(
+                              fontSize: 60,
+                              color: Colors.green,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),Text(" FIX",
+                            style: TextStyle(
+                              fontSize: 60,
+                              color: Colors.blue,
+                              fontWeight: FontWeight.w800,
+                            ),
                           ),
-                        ),Text(" FIX",
-                          style: TextStyle(
-                            fontSize: 60,
-                            color: Colors.blue,
-                            fontWeight: FontWeight.w800,
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                     const Align(
                         alignment: Alignment.centerRight,
@@ -144,7 +146,7 @@ class _SignInState extends State<SignIn> {
                             textStyle: const TextStyle(fontSize: 15),
                           ),
                           onPressed: () {
-                            widget.toggleView();
+                            Navigator.pushNamed(context, '/register');
                           },
                           child: const Text('Create an Account'),
                         ),
