@@ -42,7 +42,7 @@ class _HomeState extends State<Home> {
               return Scaffold(
                 backgroundColor: const Color.fromRGBO(231,248,238,1),
                 appBar: AppBar(
-                  title: const Text('Mechanic Finder'),
+                  title: const Text('Easy Fix'),
                   backgroundColor: Colors.green[600],
                   elevation: 0.0,
                 ),

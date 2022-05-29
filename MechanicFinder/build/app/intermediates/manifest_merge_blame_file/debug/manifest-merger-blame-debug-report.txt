@@ -31,7 +31,7 @@
 23-->[androidx.core:core:1.6.0] C:\Users\Ravindu\.gradle\caches\transforms-2\files-2.1\14b93615368c2249f1830e26ca064ab5\core-1.6.0\AndroidManifest.xml:24:18-86
 24        android:debuggable="true"
 25        android:icon="@mipmap/ic_launcher"
-26        android:label="mechanic_finder" >
+26        android:label="EASY FIX" >
 27        <meta-data
 28            android:name="com.google.android.geo.API_KEY"
 29            android:value="AIzaSyAHWvx32Y_hxcp-Wi8pHEkNvn6yQRLzjPg" />

@@ -23,7 +23,7 @@
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="mechanic_finder" >
+        android:label="EASY FIX" >
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAHWvx32Y_hxcp-Wi8pHEkNvn6yQRLzjPg" />

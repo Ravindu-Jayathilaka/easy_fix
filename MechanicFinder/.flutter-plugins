@@ -6,4 +6,5 @@ firebase_auth_web=C:\\src\\flutter\\flutter\\.pub-cache\\hosted\\pub.dartlang.or
 firebase_core=C:\\src\\flutter\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_core-1.13.1\\
 firebase_core_web=C:\\src\\flutter\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\firebase_core_web-1.6.1\\
 flutter_plugin_android_lifecycle=C:\\src\\flutter\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\flutter_plugin_android_lifecycle-2.0.5\\
+geocoding=C:\\src\\flutter\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\geocoding-2.0.4\\
 google_maps_flutter=C:\\src\\flutter\\flutter\\.pub-cache\\hosted\\pub.dartlang.org\\google_maps_flutter-2.1.3\\
